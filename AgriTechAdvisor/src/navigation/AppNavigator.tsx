@@ -5,7 +5,14 @@ import WeatherScreen from '../screens/WeatherScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import CropDiagnosisScreen from '../screens/CropDiagnosisScreen';
 
-const Stack = createNativeStackNavigator();
+export type RootStackParamList = {
+  Dashboard: undefined;
+  Weather: undefined;
+  Settings: undefined;
+  CropDiagnosis: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function AppNavigator() {
   return (
