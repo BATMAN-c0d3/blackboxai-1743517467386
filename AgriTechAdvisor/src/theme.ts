@@ -14,8 +14,32 @@ export const theme = extendTheme({
       800: '#2e7d32',
       900: '#1b5e20',
     },
+    blue: {
+      50: '#EFF6FF',
+      500: '#3B82F6',
+      800: '#1E40AF',
+    },
+    coolGray: {
+      600: '#4A5568',
+      800: '#2D3748',
+    },
+    emerald: {
+      600: '#2563EB',
+    },
+  },
+  space: {
+    '0': 0,
+    '1': 4,
+    '2': 8,
+    '3': 12,
+    '4': 16,
+    '5': 20,
+    '6': 24,
+    '8': 32,
+    '10': 40,
   },
   config: {
     initialColorMode: 'light',
+    useSystemColorMode: true,
   },
 });
