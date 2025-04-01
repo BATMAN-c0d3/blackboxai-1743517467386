@@ -1,8 +1,12 @@
 import React from 'react';
 import { Box, Text, Button, VStack, HStack, Divider, Icon } from 'native-base';
 import { MaterialIcons } from '@expo/vector-icons';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../navigation/AppNavigator';
 
-export default function DashboardScreen({ navigation }) {
+type Props = NativeStackScreenProps<RootStackParamList, 'Dashboard'>;
+
+export default function DashboardScreen({ navigation }: Props) {
   return (
     <Box flex={1} p={4} bg="primary.50">
       <VStack space={4} flex={1}>
