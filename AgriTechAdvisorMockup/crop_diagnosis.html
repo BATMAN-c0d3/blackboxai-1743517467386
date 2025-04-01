@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTech Advisor - Crop Diagnosis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .upload-area {
+            border: 2px dashed #9CA3AF;
+            transition: all 0.3s;
+        }
+        .upload-area:hover {
+            border-color: #10B981;
+            background-color: #F0FDF4;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-6 max-w-md">
+        <!-- Header -->
+        <header class="flex items-center mb-8">
+            <button class="mr-4">
+                <i class="fas fa-arrow-left text-xl text-green-800"></i>
+            </button>
+            <h1 class="text-2xl font-bold text-green-800">Crop Diagnosis</h1>
+        </header>
+
+        <!-- Upload Section -->
+        <section class="mb-8">
+            <div class="upload-area rounded-2xl p-8 text-center mb-4">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-camera text-green-600 text-2xl"></i>
+                </div>
+                <h2 class="font-medium mb-2">Upload Crop Photo</h2>
+                <p class="text-gray-600 text-sm mb-4">Take a photo or select from gallery</p>
+                <button class="bg-green-600 text-white px-6 py-2 rounded-full font-medium">
+                    Select Image
+                </button>
+            </div>
+            <p class="text-gray-500 text-xs text-center">Our AI will analyze your crop for diseases and pests</p>
+        </section>
+
+        <!-- Sample Results -->
+        <section class="bg-white rounded-xl shadow-md p-6 hidden" id="results-section">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h2 class="font-bold text-lg text-green-800">Diagnosis Results</h2>
+                    <p class="text-gray-600 text-sm">Confidence: 92%</p>
+                </div>
+                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-medium">Urgent</span>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="font-medium mb-2 text-gray-800">Identified Disease</h3>
+                <p class="text-lg font-semibold text-red-600">Late Blight (Phytophthora infestans)</p>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="font-medium mb-2 text-gray-800">Affected Crop</h3>
+                <p class="text-gray-800">Tomatoes</p>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="font-medium mb-2 text-gray-800">Symptoms</h3>
+                <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                    <li>Dark, water-soaked lesions on leaves</li>
+                    <li>White fungal growth under leaves in humid conditions</li>
+                    <li>Rapid spreading in wet weather</li>
+                </ul>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="font-medium mb-2 text-gray-800">Recommended Treatment</h3>
+                <ul class="list-disc pl-5 text-gray-700 space-y-1">
+                    <li>Apply copper-based fungicides every 7-10 days</li>
+                    <li>Remove and destroy infected plants</li>
+                    <li>Improve air circulation between plants</li>
+                    <li>Avoid overhead watering</li>
+                </ul>
+            </div>
+
+            <div class="flex space-x-3">
+                <button class="flex-1 bg-green-600 text-white py-2 rounded-lg font-medium">
+                    <i class="fas fa-shopping-cart mr-2"></i> Buy Treatment
+                </button>
+                <button class="flex-1 border border-green-600 text-green-600 py-2 rounded-lg font-medium">
+                    <i class="fas fa-share-alt mr-2"></i> Share
+                </button>
+            </div>
+        </section>
+
+        <!-- Processing State -->
+        <section class="text-center py-10 hidden" id="processing-section">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-spinner fa-spin text-green-600 text-2xl"></i>
+            </div>
+            <h2 class="text-xl font-medium mb-2">Analyzing Your Crop</h2>
+            <p class="text-gray-600">Our AI is examining your photo for diseases...</p>
+        </section>
+    </div>
+
+    <script>
+        // Simple demo functionality
+        document.querySelector('.upload-area button').addEventListener('click', function() {
+            document.querySelector('.upload-area').classList.add('hidden');
+            document.getElementById('processing-section').classList.remove('hidden');
+            
+            // Simulate processing delay
+            setTimeout(function() {
+                document.getElementById('processing-section').classList.add('hidden');
+                document.getElementById('results-section').classList.remove('hidden');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
