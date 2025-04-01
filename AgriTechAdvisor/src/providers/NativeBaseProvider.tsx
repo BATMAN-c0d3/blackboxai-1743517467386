@@ -6,9 +6,16 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function AppNativeBaseProvider({ children }: Props) {
+export default function NativeBaseProviderWrapper({ children }: Props) {
   return (
-    <NativeBaseProvider theme={theme}>
+    <NativeBaseProvider
+      theme={theme}
+      config={{
+        dependencies: {
+          'linear-gradient': require('expo-linear-gradient').LinearGradient,
+        },
+      }}
+    >
       {children}
     </NativeBaseProvider>
   );
