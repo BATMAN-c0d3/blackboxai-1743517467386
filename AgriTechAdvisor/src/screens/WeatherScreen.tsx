@@ -16,16 +16,33 @@ const weatherData = [
 
 export default function WeatherScreen({ navigation }: Props) {
   return (
-    <Box flex={1} p={4} bg="blue.50">
-      <VStack space={4}>
-        <Text fontSize="2xl" fontWeight="bold" color="blue.800">
+    <Box flex={1} safeArea p={5} bg={{
+      linearGradient: {
+        colors: ['blue.50', 'indigo.50'],
+        start: [0, 0],
+        end: [1, 1]
+      }
+    }}>
+      <VStack space={5} w="100%" maxW="800px" alignSelf="center">
+        <Text fontSize="2xl" fontWeight="bold" color="coolGray.800" mb={4}>
           7-Day Weather Forecast
         </Text>
         
         {weatherData.map((item, index) => (
-          <Box key={index} bg="white" borderRadius="md" p={4} shadow={1}>
-            <HStack justifyContent="space-between" alignItems="center">
-              <Text fontSize="lg" fontWeight="medium">{item.day}</Text>
+          <Box 
+            key={index} 
+            bg="white" 
+            borderRadius="lg" 
+            p={5} 
+            shadow={3}
+            w="100%"
+            mb={index < weatherData.length - 1 ? 3 : 0}
+          >
+            <HStack justifyContent="space-between" alignItems="center" space={4}>
+              <Text fontSize="lg" fontWeight="semibold" color="coolGray.800" flex={1}>
+                {item.day}
+              </Text>
+              
               <HStack space={4} alignItems="center">
                 <Icon 
                   as={MaterialCommunityIcons} 
@@ -33,19 +50,23 @@ export default function WeatherScreen({ navigation }: Props) {
                   size="lg" 
                   color="blue.500" 
                 />
-                <Text>{item.temp}</Text>
-                <HStack alignItems="center">
+                <Text fontSize="lg" color="emerald.600" fontWeight="medium" minW={16} textAlign="right">
+                  {item.temp}
+                </Text>
+                <HStack alignItems="center" space={1}>
                   <Icon 
                     as={MaterialCommunityIcons} 
                     name="weather-pouring" 
                     size="sm" 
-                    color="blue.300" 
+                    color="blue.400" 
                   />
-                  <Text ml={1}>{item.rain}</Text>
+                  <Text fontSize="sm" color="coolGray.600">
+                    {item.rain}
+                  </Text>
                 </HStack>
               </HStack>
             </HStack>
-            {index < weatherData.length - 1 && <Divider mt={2} />}
+            {index < weatherData.length - 1 && <Divider my={2} />}
           </Box>
         ))}
       </VStack>
