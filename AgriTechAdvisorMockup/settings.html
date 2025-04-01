@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTech Advisor - Settings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .language-option {
+            transition: all 0.2s;
+        }
+        .language-option:hover {
+            background-color: #F0FDF4;
+        }
+        .language-option.active {
+            background-color: #D1FAE5;
+            border-color: #10B981;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-6 max-w-md">
+        <!-- Header -->
+        <header class="flex items-center mb-8">
+            <button class="mr-4">
+                <i class="fas fa-arrow-left text-xl text-green-800"></i>
+            </button>
+            <h1 class="text-2xl font-bold text-green-800">Settings</h1>
+        </header>
+
+        <!-- Language Selection -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-green-800">App Language</h2>
+            <div class="space-y-2">
+                <!-- English -->
+                <div class="language-option active flex items-center p-4 border rounded-lg cursor-pointer">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                        <span class="text-green-800 font-bold">EN</span>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-medium">English</h3>
+                    </div>
+                    <i class="fas fa-check text-green-600"></i>
+                </div>
+                
+                <!-- French -->
+                <div class="language-option flex items-center p-4 border rounded-lg cursor-pointer">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                        <span class="text-blue-800 font-bold">FR</span>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-medium">Français</h3>
+                    </div>
+                </div>
+                
+                <!-- Kinyarwanda -->
+                <div class="language-option flex items-center p-4 border rounded-lg cursor-pointer">
+                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+                        <span class="text-purple-800 font-bold">KN</span>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-medium">Kinyarwanda</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notification Settings -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-green-800">Notifications</h2>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <!-- Weather Alerts -->
+                <div class="flex items-center justify-between p-4 border-b border-gray-100">
+                    <div>
+                        <h3 class="font-medium">Weather Alerts</h3>
+                        <p class="text-sm text-gray-600">Get notified about weather changes</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer" checked>
+                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+                    </label>
+                </div>
+                
+                <!-- Disease Warnings -->
+                <div class="flex items-center justify-between p-4 border-b border-gray-100">
+                    <div>
+                        <h3 class="font-medium">Disease Warnings</h3>
+                        <p class="text-sm text-gray-600">Alerts about common crop diseases</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer" checked>
+                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+                    </label>
+                </div>
+                
+                <!-- Farming Tips -->
+                <div class="flex items-center justify-between p-4">
+                    <div>
+                        <h3 class="font-medium">Farming Tips</h3>
+                        <p class="text-sm text-gray-600">Seasonal farming advice</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer">
+                        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Account Section -->
+        <section>
+            <h2 class="text-xl font-semibold mb-4 text-green-800">Account</h2>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="p-4 border-b border-gray-100 flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-green-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium">John Farmer</h3>
+                        <p class="text-sm text-gray-600">john@example.com</p>
+                    </div>
+                </div>
+                <div class="p-4 text-red-600 font-medium flex items-center">
+                    <i class="fas fa-sign-out-alt mr-3"></i>
+                    <span>Log Out</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Language selection functionality
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.language-option').forEach(opt => {
+                    opt.classList.remove('active');
+                    opt.querySelector('i')?.remove();
+                });
+                this.classList.add('active');
+                this.insertAdjacentHTML('beforeend', '<i class="fas fa-check text-green-600"></i>');
+            });
+        });
+    </script>
+</body>
+</html>
